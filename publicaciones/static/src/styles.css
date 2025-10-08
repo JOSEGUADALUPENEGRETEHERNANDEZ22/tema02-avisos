@@ -1,0 +1,56 @@
+@import "tailwindcss";
+/*JOSE GUADALUPE NEGRETE HERNANDEZ*/
+/* --- componentes personalizados para avisos --- */
+@layer components {
+	/* contenedor reutilizable */
+	.container {
+		max-width: 1100px;
+    
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	/* tarjeta base */
+	.card {
+		@apply bg-white/80 rounded-xl p-6 transition-shadow duration-300;
+		/* fallback por si el navegador no soporta backdrop-blur */
+		box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+	}
+
+	/* estilo “neon” azul para borde y glow */
+	.neon-blue {
+		border: 1px solid rgba(59,130,246,0.9); /*Agregue border-blue-500 semitransparente */
+
+		background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+		box-shadow:
+			0 0 10px rgba(59,130,246,0.45),
+			0 0 30px rgba(59,130,246,0.2),
+
+			0 8px 24px rgba(2,6,23,0.35);
+	}
+
+	/* texto con brillo/neón para títulos */
+	.neon-text {
+		color: #bfdbfe; /* azul claro para lectura */
+		text-shadow: 0 2px 6px rgba(59,130,246,0.45);
+		font-weight: 600;
+	}
+
+	.muted {
+		@apply text-gray-500;
+	}
+}
+
+@layer utilities {
+	/* funciona para poder usar un gradiente en texto con utilidad */
+	.text-gradient {
+		background: linear-gradient(90deg,#60a5fa,#0ea5ff,#7c3aed);
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+	}
+}
+
+

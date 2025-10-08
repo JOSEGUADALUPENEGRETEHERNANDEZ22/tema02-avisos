@@ -20,4 +20,6 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("avisos.urls")),  # raíz del sitio muestra la lista de avisos [cite: 105]
+    # También exponer la app bajo /avisos/ para que http://.../avisos/ muestre la misma lista
+    path('avisos/', include('avisos.urls')), #Agregar esta línea para que /avisos/ también funcione
 ]
